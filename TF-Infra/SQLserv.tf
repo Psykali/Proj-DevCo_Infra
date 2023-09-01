@@ -1,4 +1,6 @@
-# MySQL Server
+#########################
+## Create Mysql Server ##
+#########################
 resource "azurerm_mysql_server" "mysql" {
   name                = var.mysql_server_name
   location            = var.location
