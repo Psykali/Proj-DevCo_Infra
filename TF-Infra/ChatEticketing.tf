@@ -123,9 +123,9 @@ provisioner "remote-exec" {
   inline = [
         "sudo apt-get update && sudo apt-get -y upgrade",
         "sudo apt install -y git wget openssl",
-        "sudo wget https://www.zulip.org/dist/releases/zulip-server-latest.tar.gz",
-        "sudo tar -xvzf zulip-server-latest.tar.gz",
-        "sudo -s ./zulip-server-*/scripts/setup/install --certbot --email=skhalifa@simplonformations.onmicrosoft.com --hostname=${azurerm_public_ip.chattickting_pip.fqdn}",     
+#        "sudo wget https://www.zulip.org/dist/releases/zulip-server-latest.tar.gz",
+#        "sudo tar -xvzf zulip-server-latest.tar.gz",
+#        "sudo -s ./zulip-server-*/scripts/setup/install --certbot --email=skhalifa@simplonformations.onmicrosoft.com --hostname=${azurerm_public_ip.chattickting_pip.fqdn}",     
   ]
 }
 }
