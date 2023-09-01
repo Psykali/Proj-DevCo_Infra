@@ -60,5 +60,17 @@ security_rule {
     destination_address_prefix= "*"
 }
 
+security_rule {
+    name                   = "allow-custom"
+    priority               = 310
+    direction              = "Inbound"
+    access                 = "Allow"
+    protocol               = "Tcp"
+    source_port_range      = "*"
+    destination_port_range = "1433"
+    source_address_prefix  = "*"
+    destination_address_prefix= "*"
+}
+
 tags = local.common_tags
 }
