@@ -97,17 +97,6 @@ resource "azurerm_public_ip" "admin_pip" {
   domain_name_label   = "${var.admin__vm}-${count.index}"
   tags                = local.common_tags
 }
-###################
-## SQL Databases ##
-###################
-resource "azurerm_mysql_database" "admin_db" {
-  count               = 3
-  name                = "admindb-${count.index}"
-  resource_group_name = var.resource_group_name
-  server_name         = azurerm_mysql_server.mysql.name
-  charset             = "UTF8"
-  collation           = "UTF8_GENERAL_CI"
-}
 #######################################################################
 ####################
 ## Bash Scripting ##
