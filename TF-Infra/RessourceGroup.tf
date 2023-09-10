@@ -3,6 +3,9 @@ locals {
     CreatedBy = "SK"
     Env       = "Prod"
     Why       = "DipP20"
+    Proj        = "Proj-DevCo"
+    Infratype   = "PaaS-IaaS-IaC"
+    Ressources  = "VM-NSG-VNET-ContReg-Workbook-DockerImg"
   }
 }
 ###########################################
