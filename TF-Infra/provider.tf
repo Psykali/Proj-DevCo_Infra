@@ -13,7 +13,7 @@ terraform {
     resource_group_name  = "PERSO_SIEF"
     storage_account_name = "sppersotfstates"
     container_name       = "sakvtfstate"
-    key                  = "vmdocker.tfstate"
+    key                  = "devcoinfra.tfstate"
   }
 }
 
