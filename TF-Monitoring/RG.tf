@@ -13,8 +13,8 @@ locals {
     CreatedBy = "SK"
     Env       = "Prod"
     Why       = "DipP20"
-    Proj        = "Jenkins_AKS"
+    Proj        = "Proj-DevCo"
     Infratype   = "PaaS-IaaS-IaC"
-    Ressources  = "VM-NSG-VNET-AKS-ContReg-Workbook-DockerHub-DockerImg"
+    Ressources  = "VM-NSG-VNET-ContReg-Workbook-DockerImg"
   }
 }
