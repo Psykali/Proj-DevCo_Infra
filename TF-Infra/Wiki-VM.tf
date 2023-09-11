@@ -91,16 +91,6 @@ resource "azurerm_public_ip" "wiki_pip" {
   domain_name_label   = var.wiki_vm
   tags = local.common_tags
 }
-###################
-## SQL Databases ##
-###################
-resource "azurerm_mysql_database" "wiki_db" {
-  name                = "wikidb"
-  resource_group_name = var.resource_group_name
-  server_name         = azurerm_mysql_server.mysql.name
-  charset             = "UTF8"
-  collation           = "UTF8_GENERAL_CI"
-}
 #######################################################################
 ####################
 ## Bash Scripting ##
