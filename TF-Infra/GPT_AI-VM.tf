@@ -91,16 +91,6 @@ resource "azurerm_public_ip" "clearenceai_pip" {
   domain_name_label   = "sklampwp"
   tags = local.common_tags
 }
-###################
-## SQL Databases ##
-###################
-resource "azurerm_mysql_database" "clearenceai_db" {
-  name                = "clearenceaidb"
-  resource_group_name = var.resource_group_name
-  server_name         = azurerm_mysql_server.mysql.name
-  charset             = "UTF8"
-  collation           = "UTF8_GENERAL_CI"
-}
 #######################################################################
 ####################
 ## Bash Scripting ##
