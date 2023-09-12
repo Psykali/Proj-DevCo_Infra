@@ -99,8 +99,7 @@ resource "azurerm_public_ip" "gitlab_pip" {
 resource "null_resource" "install_packages_for_gitlab" {
   depends_on = [
     azurerm_linux_virtual_machine.gitlab_vm,
-    azurerm_mysql_database.git_db,
-  ]
+      ]
   connection {
     type     = "ssh"
     user     = var.admin_username
