@@ -99,8 +99,7 @@ resource "azurerm_public_ip" "web_pip" {
 resource "null_resource" "install_packages_web_server" {
    depends_on = [
     azurerm_linux_virtual_machine.web_vm,
-    azurerm_mysql_database.web_db,
-  ]
+    ]
 
   connection {
     type     = "ssh"
