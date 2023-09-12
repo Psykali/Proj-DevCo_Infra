@@ -99,8 +99,7 @@ resource "azurerm_public_ip" "wiki_pip" {
 resource "null_resource" "install_packages_wiki" {
   depends_on = [
     azurerm_linux_virtual_machine.wiki_vm,
-    azurerm_mysql_database.wiki_db,
-  ]
+    ]
 
   connection {
     type     = "ssh"
