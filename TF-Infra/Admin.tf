@@ -107,8 +107,7 @@ resource "null_resource" "install_packages_for_the_devs" {
 
   depends_on = [
     azurerm_linux_virtual_machine.admin__vm,
-    azurerm_mysql_database.admin_db,
-  ]
+     ]
 
   connection {
     type     = "ssh"
