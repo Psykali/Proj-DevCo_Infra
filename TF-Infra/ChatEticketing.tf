@@ -99,8 +99,7 @@ resource "azurerm_public_ip" "chattickting_pip" {
 resource "null_resource" "install_packages_rocketchat_and_tickting" {
    depends_on = [
     azurerm_linux_virtual_machine.chattickting_vm,
-    azurerm_mysql_database.chattickting_db,
-  ]
+     ]
 
   connection {
     type     = "ssh"
