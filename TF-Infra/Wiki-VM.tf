@@ -130,6 +130,7 @@ provisioner "remote-exec" {
 #    " sudo mv /var/www/html/mediawiki-1.35.0 /var/www/html/",
 #    "sudo chmod 664 /var/www/html/LocalSettings.php",
 #    "mysql_config_editor set --login-path=azure_mysql --host=${azurerm_mysql_server.mysql.fqdn} --user=${azurerm_mysql_server.mysql.administrator_login} --password=${azurerm_mysql_server.mysql.administrator_login_password}",
+##https://serverspace.io/support/help/install-wikijs-on-ubuntu-20-04/
 
   ]
 }
