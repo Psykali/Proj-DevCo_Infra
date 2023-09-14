@@ -105,7 +105,7 @@ resource "null_resource" "install_packages_rocketchat_and_tickting" {
     type     = "ssh"
     user     = var.admin_username
     password = var.admin_password
-    host     = azurerm_linux_virtual_machine.gitlab_vm.public_ip_address
+    host     = azurerm_linux_virtual_machine.chattickting_vm.public_ip_address
   }
 
 provisioner "remote-exec" {
