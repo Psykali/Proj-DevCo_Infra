@@ -96,25 +96,25 @@ resource "azurerm_public_ip" "chattickting_pip" {
 ## Bash Scripting ##
 ####################
 # Deploy Git Server
-resource "null_resource" "install_packages_rocketchat_and_tickting" {
-   depends_on = [
-    azurerm_linux_virtual_machine.chattickting_vm,
-     ]
+#resource "null_resource" "install_packages_rocketchat_and_tickting" {
+#   depends_on = [
+#    azurerm_linux_virtual_machine.chattickting_vm,
+#     ]
 
-  connection {
-    type     = "ssh"
-    user     = var.admin_username
-    password = var.admin_password
-    host     = azurerm_linux_virtual_machine.chattickting_vm.public_ip_address
-  }
+#  connection {
+#    type     = "ssh"
+#    user     = var.admin_username
+#    password = var.admin_password
+#    host     = azurerm_linux_virtual_machine.chattickting_vm.public_ip_address
+#  }
 
-provisioner "remote-exec" {
+#provisioner "remote-exec" {
   inline = [
-        "sudo apt-get update && sudo apt-get -y upgrade",
+#        "sudo apt-get update && sudo apt-get -y upgrade",
 #        "sudo apt install -y git wget openssl",
 #        "sudo wget https://www.zulip.org/dist/releases/zulip-server-latest.tar.gz",
 #        "sudo tar -xvzf zulip-server-latest.tar.gz",
 #        "sudo -s ./zulip-server-*/scripts/setup/install --certbot --email=skhalifa@simplonformations.onmicrosoft.com --hostname=${azurerm_public_ip.chattickting_pip.fqdn}",     
-  ]
-}
-}
+#  ]
+#}
+#}
