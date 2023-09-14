@@ -3,7 +3,7 @@
 ## Create Admin VM ##
 #####################
 resource "azurerm_linux_virtual_machine" "admin__vm" {
-  count               = 3
+  count               = 1
   name                = "${var.admin__vm}-${count.index}"
   location            = var.location
   resource_group_name = var.resource_group_name
