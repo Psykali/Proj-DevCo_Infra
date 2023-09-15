@@ -116,5 +116,6 @@ resource "azurerm_public_ip" "chattickting_pip" {
 #        "sudo tar -xvzf zulip-server-latest.tar.gz",
 #        "sudo -s ./zulip-server-*/scripts/setup/install --certbot --email=skhalifa@simplonformations.onmicrosoft.com --hostname=${azurerm_public_ip.chattickting_pip.fqdn}",     
 #  ]
+## https://computingforgeeks.com/install-rocket-chat-on-ubuntu-with-letsencrypt/
 #}
 #}
