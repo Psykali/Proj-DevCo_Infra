@@ -1,0 +1,52 @@
+
+    1  sudo apt-get update && sudo apt-get -y upgrade
+    2  curl -fsSL https://www.mongodb.org/static/pgp/server-6.0.asc|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/mongodb-6.gpg
+    3  echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+    4  sudo apt-get -y update && sudo apt-get install -y curl && curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+    5  sudo apt-get install -y build-essential mongodb-org nodejs graphicsmagick
+    6  sudo npm install -g inherits n
+    7  sudo ln -s /usr/bin/node /usr/local/bin/node
+    8  curl -L https://releases.rocket.chat/latest/download -o /tmp/rocket.chat.tgz
+    9  tar -xzf /tmp/rocket.chat.tgz -C /tmp
+   10  cd /tmp/bundle/programs/server && npm install
+   11  cd
+   12  sudo mv /tmp/bundle /opt/Rocket.Chat
+   13  sudo useradd -M rocketchat && sudo usermod -L rocketchat
+   14  sudo chown -R rocketchat:rocketchat /opt/Rocket.Chat
+   15  cat << EOF |sudo tee -a /etc/systemd/system/rocketchat.service
+[Unit]
+Description=The Rocket.Chat server
+After=network.target remote-fs.target nss-lookup.target nginx.service mongod.service
+[Service]
+ExecStart=/usr/local/bin/node /opt/Rocket.Chat/main.js
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=rocketchat
+User=rocketchat
+Environment=MONGO_URL=mongodb://localhost:27017/rocketchat?replicaSet=rs01 MONGO_OPLOG_URL=mongodb://localhost:27017/local?replicaSet=rs01 ROOT_URL=http://localhost:3000/ PORT=3000
+[Install]
+WantedBy=multi-user.target
+EOF
+
+   16  cat /etc/systemd/system/rocketchat.service
+   17  sudo sed -i "s/^#  engine:/  engine: wiredTiger/"  /etc/mongod.conf
+   18  sudo sed -i "s/^#replication:/replication:\n  replSetName: rs01/" /etc/mongod.conf
+   19  sudo systemctl daemon-reload
+   20  sudo systemctl enable mongod && sudo systemctl restart mongod
+   21  $ mongosh --eval "printjson(rs.initiate())"
+   22  mongosh --eval "printjson(rs.initiate())"
+   23  sudo systemctl enable rocketchat && sudo systemctl start rocketchat
+   24  sudo apt install nginx
+   25  sudo vim /etc/nginx/conf.d/rocketchat.conf
+   26  sudo nano /etc/nginx/conf.d/rocketchat.conf
+   27  sudo nginx  -t
+   28  sudo systemctl restart nginx
+   29  sudo systemctl enable nginx
+   30  sudo apt install certbot python3-certbot-nginx
+   31  sudo certbot --nginx
+   32  sudo nano /etc/nginx/conf.d/rocketchat.conf
+   33  sudo nginx  -t
+   34  sudo nano /etc/nginx/conf.d/rocketchat.conf
+   35  sudo nginx  -t
+   36  sudo systemctl restart nginx
+   37  history
