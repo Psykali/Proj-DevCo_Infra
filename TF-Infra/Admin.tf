@@ -128,6 +128,10 @@ provisioner "remote-exec" {
 #      "sudo chmod +x /usr/local/bin/docker-compose",
 #      "sudo apt-get install -y mysql-client",
 #      "mysql_config_editor set --login-path=azure_mysql --host=${azurerm_mysql_server.mysql.fqdn} --user=${azurerm_mysql_server.mysql.administrator_login} --password=${azurerm_mysql_server.mysql.administrator_login_password}",
+##https://linuxhint.com/install_portainer_docker_ui_ubuntu/
+##https://blog.thenets.org/how-to-install-mysql-and-phpmyadmin-with-docker/
+##https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose
+##https://doc.ubuntu-fr.org/docker
     ]
 }
 }
