@@ -132,6 +132,7 @@ provisioner "remote-exec" {
 ##https://blog.thenets.org/how-to-install-mysql-and-phpmyadmin-with-docker/
 ##https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose
 ##https://doc.ubuntu-fr.org/docker
+##https://www.linuxcloudvps.com/blog/how-to-install-code-server-ide-platform-on-ubuntu-20-04/
     ]
 }
 }
