@@ -123,11 +123,10 @@ provisioner "remote-exec" {
       "sudo apt-get install -y apache2",
       "sudo apt-get install -y mariadb-server",
       "sudo apt-get install -y php libapache2-mod-php php-mysql",
-#      "sudo apt -y install docker.io",
-#      "sudo curl -L 'https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)' -o /usr/local/bin/docker-compose",
-#      "sudo chmod +x /usr/local/bin/docker-compose",
-#      "sudo apt-get install -y mysql-client",
-#      "mysql_config_editor set --login-path=azure_mysql --host=${azurerm_mysql_server.mysql.fqdn} --user=${azurerm_mysql_server.mysql.administrator_login} --password=${azurerm_mysql_server.mysql.administrator_login_password}",
+     "sudo apt -y install docker.io",
+      "sudo curl -L 'https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)' -o /usr/local/bin/docker-compose",
+      "sudo chmod +x /usr/local/bin/docker-compose",
+     "sudo apt-get install -y mysql-client",
 ##https://linuxhint.com/install_portainer_docker_ui_ubuntu/
 ##https://blog.thenets.org/how-to-install-mysql-and-phpmyadmin-with-docker/
 ##https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose
